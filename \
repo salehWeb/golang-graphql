@@ -1,0 +1,155 @@
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
+
+	"github.com/nsf/termbox-go"
+)
+
+type Option struct {
+	Text  string
+	Value string
+}
+
+var file *os.File
+var options = []Option{
+	{"3", "1"},
+	{"3", "2"},
+	{"5", "3"},
+	{"4", "4"},
+}
+
+func removeProject(path string) {
+
+}
+
+func addProject(path string) {
+	file.Write([]byte(path))
+}
+
+func INIT() {
+	exePath, err := os.Executable()
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	jsonPath := filepath.Join(exePath, "config.text")
+	file, err = os.OpenFile(jsonPath, os.O_APPEND|os.O_CREATE, 0644)
+	addProject("helloacs/ascauygcujkcsa/ascsaccsaa")
+
+	bytes, err := ioutil.ReadAll(file)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+    fmt.Printf("text is %s from file is %s", string(bytes), string(jsonPath)) // convert jsonPath to string
+	data := strings.Split(string(bytes), "\n")
+
+	for i := 0; i < len(data); i++ {
+		ss := strings.Split(data[i], "/")
+		switch len(ss) {
+		case 0:
+			// handle empty string
+		case 1:
+			// handle string without "/"
+		default:
+			// handle string with "/"
+			last := ss[len(ss)-1]
+			options = append(options, Option{Value: data[i], Text: last})
+		}
+	}
+}
+
+func openWithNvim(dir string) {
+	err := os.Chdir(dir)
+
+	cmd := exec.Command("nvim", ".")
+
+	cmd.Stdin = os.Stdin
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+
+	err = cmd.Run()
+
+	if err != nil {
+		panic(err)
+	}
+}
+
+func printOptions(selected int) {
+	fmt.Println("Please select an option:")
+
+	for i, option := range options {
+		if i == selected {
+			fmt.Printf("> %s\n", option.Text)
+		} else {
+			fmt.Printf("  %s\n", option.Text)
+		}
+	}
+
+}
+
+func getSelection() (string, error) {
+	selected := 0
+	printOptions(selected)
+
+	for {
+		event := termbox.PollEvent()
+
+		switch {
+		case event.Type == termbox.EventKey:
+			switch event.Key {
+			case termbox.KeyEsc:
+				termbox.Close()
+				os.Exit(0)
+			case termbox.KeyArrowUp:
+				selected--
+				if selected < 0 {
+					selected = len(options) - 1
+				}
+			case termbox.KeyArrowDown:
+				selected++
+				if selected >= len(options) {
+					selected = 0
+				}
+			case termbox.KeyEnter:
+				return options[selected].Value, nil
+			default:
+				fmt.Println(string(event.Ch))
+			}
+		}
+
+		// fmt.Print("\033[2J\033[H")
+		printOptions(selected)
+	}
+}
+
+func main() {
+    err := termbox.Init()
+
+	if err != nil {
+		panic(err)
+	}
+
+	// fmt.Print("\033[2J\033[H")
+
+	INIT()
+	value, err := getSelection()
+
+	if err != nil {
+		panic(err)
+	}
+
+	termbox.Close()
+
+	openWithNvim(value)
+}

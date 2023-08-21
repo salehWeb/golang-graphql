@@ -1,4 +1,4 @@
-module projects-quick-access
+module pqa
 
 go 1.18
 
