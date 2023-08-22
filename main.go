@@ -21,13 +21,13 @@ func getFile() string {
 	dir, err := os.UserHomeDir()
 
 	if err != nil {
-	    panic(err)
-    }
+		panic(err)
+	}
 
 	return filepath.Join(dir, "config.text")
 }
 
-var file = getFile() 
+var file = getFile()
 var options = []Option{}
 
 func removeProject(path string) {
@@ -147,22 +147,22 @@ func INIT() {
 		ss := strings.Split(data[i], "/")
 		if len(ss) > 0 {
 			last := ss[len(ss)-1]
-            if len(strings.Trim(last, " ")) > 0 {
-			    options = append(options, Option{Value: data[i], Text: last})
-            }
+			if len(strings.Trim(last, " ")) > 0 {
+				options = append(options, Option{Value: data[i], Text: last})
+			}
 		}
 	}
 
 }
 
-func openWithNvim(dir string) {
+func openIn(dir string) {
 	err := os.Chdir(dir)
 
-	cmd := exec.Command("nvim", ".")
+	cmd := exec.Command("gnome-terminal", fmt.Sprintf("--working-directory=%s", dir))
 
-	cmd.Stdin = os.Stdin
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	// cmd.Stdin = os.Stdin
+	// cmd.Stdout = os.Stdout
+	// cmd.Stderr = os.Stderr
 
 	err = cmd.Run()
 
@@ -237,7 +237,7 @@ func listOptions() {
 
 	termbox.Close()
 
-	openWithNvim(value)
+	openIn(value)
 }
 
 func main() {
