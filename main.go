@@ -161,7 +161,7 @@ func INIT() {
 
 func open(dir string) {
 	err := os.Chdir(dir)
-	cmd := exec.Command("gnome-terminal", fmt.Sprintf("--working-directory=%s", dir), "--full-screen")
+	cmd := exec.Command("gnome-terminal", "--window", fmt.Sprintf("--working-directory=%s", dir), "--maximize")
 	err = cmd.Run()
 
 	if err != nil {
