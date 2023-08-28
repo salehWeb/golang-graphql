@@ -61,7 +61,6 @@ func removeProject(path string) {
 	writer := bufio.NewWriter(tmp)
 
 	for scanner.Scan() {
-
 		line := scanner.Text()
 
 		if line == path {
@@ -91,7 +90,6 @@ func removeProject(path string) {
 }
 
 func addProject(path string) {
-
 	if _, err := os.Stat(file); os.IsNotExist(err) {
 		_, err := os.Create(file)
 		if err != nil {
@@ -148,6 +146,12 @@ func INIT() {
 		if len(ss) > 0 {
 			last := ss[len(ss)-1]
 			if len(strings.Trim(last, " ")) > 0 {
+
+				if _, err := os.Stat(data[i]); os.IsNotExist(err) {
+					removeProject(data[i])
+					continue
+				}
+
 				options = append(options, Option{Value: data[i], Text: last})
 			}
 		}
@@ -155,15 +159,9 @@ func INIT() {
 
 }
 
-func openIn(dir string) {
+func open(dir string) {
 	err := os.Chdir(dir)
-
-	cmd := exec.Command("gnome-terminal", fmt.Sprintf("--working-directory=%s", dir))
-
-	// cmd.Stdin = os.Stdin
-	// cmd.Stdout = os.Stdout
-	// cmd.Stderr = os.Stderr
-
+	cmd := exec.Command("gnome-terminal", fmt.Sprintf("--working-directory=%s", dir), "--full-screen")
 	err = cmd.Run()
 
 	if err != nil {
@@ -237,7 +235,7 @@ func listOptions() {
 
 	termbox.Close()
 
-	openIn(value)
+	open(value)
 }
 
 func main() {
