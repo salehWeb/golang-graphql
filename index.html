@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React + TS</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+<script>
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.classList.add('overflow-hidden'); 
+    }
+
+    document.addEventListener('click', function (event) {
+        if (event.target.classList.contains('bg-modal')) {
+            event.target.classList.remove('flex');
+            event.target.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        console.log(event)
+    });
+</script>
+
+</html>
