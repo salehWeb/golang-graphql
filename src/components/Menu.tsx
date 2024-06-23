@@ -101,7 +101,7 @@ const coffee = [
 
 const Menu = () => {
     return (
-        <div className="flex w-full flex-col gap-10">
+        <div id="menu" className="flex w-full flex-col gap-10">
             <div className="justify-center items-center flex text-gray-200 flex-col">
                 <h1 className="text-6xl">Explore Our Menu</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">

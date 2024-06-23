@@ -17,18 +17,92 @@
         const modal = document.getElementById(modalId);
         modal.classList.remove('hidden');
         modal.classList.add('flex');
-        document.body.classList.add('overflow-hidden'); 
+        document.body.classList.add('overflow-hidden');
     }
 
-    document.addEventListener('click', function (event) {
+    document.addEventListener('click', (event) => {
         if (event.target.classList.contains('bg-modal')) {
             event.target.classList.remove('flex');
             event.target.classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
         }
-
-        console.log(event)
     });
+
+    let times = 0;
+
+    setTimeout(() => {
+        testimonialsInit()
+        topScrollButtonInit()
+        initContactForm()
+    }, 1000)
+
+    function testimonialsInit() {
+        const back = document.getElementById("testimonial-go-back")
+        const forward = document.getElementById("testimonial-go-forward")
+        const container = document.getElementById("scroll-container")
+
+        function getMaxTimes() {
+            if (container.offsetWidth === 324) {
+                return 4;
+            } else if (container.offsetWidth === 648) {
+                return 3;
+            } else {
+                return 2;
+            }
+        }
+
+
+        function goBack() {
+            if (times === 0) times = getMaxTimes();
+            else times--;
+
+            container.scrollTo({ left: times * 324, behavior: 'smooth' });
+        }
+
+        function goForward() {
+            if (times === getMaxTimes()) times = 0;
+            else times++;
+            container.scrollTo({ left: times * 324, behavior: 'smooth' });
+        }
+
+
+        back.addEventListener("click", (e) => goBack())
+        forward.addEventListener("click", (e) => goForward())
+    }
+
+
+    function handleScrollTop() {
+        const heroElement = document.getElementById('home');
+        const rect = heroElement.getBoundingClientRect();
+        const isHeroVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+        if (isHeroVisible) document.getElementById("up-button").classList.add("hidden")
+        else document.getElementById("up-button").classList.remove("hidden")
+    }
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function topScrollButtonInit() {
+        handleScrollTop()
+        window.addEventListener('scroll', handleScrollTop);
+    }
+
+    function initContactForm() {
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                await submitContact(
+                    document.getElementById("first-name").value+" "+document.getElementById("last-name").value,
+                    document.getElementById("email").value,
+                    document.getElementById("message").value
+                )
+            })
+    }
+
 </script>
 
 </html>

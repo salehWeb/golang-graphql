@@ -2,7 +2,7 @@ import { GiCoffeeBeans } from "react-icons/gi"
 
 const Order = () => {
     return (
-        <div className="flex flex-col">
+        <div id="order" className="flex flex-col">
             <div className="justify-center items-center flex text-gray-200 flex-col">
                 <h1 className="text-6xl">Order Now</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">
