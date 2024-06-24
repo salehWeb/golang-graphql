@@ -4,8 +4,8 @@ import { FaArrowUp } from "react-icons/fa";
 
 const Hero = () => {
     return (
-        <div id="home" className="w-full h-screen relative flex mb-20 justify-between flex-col">
-            <div className="h-fit flex"><Header /></div>
+        <div id="home" className="flex flex-col items-center relative h-screen px-10 mb-20">
+            <div className="h-fit w-full flex"><Header /></div>
             <div className='absolute w-full h-screen bg-black'>
                 <img
                     alt="coffee beans"
@@ -30,8 +30,8 @@ const Hero = () => {
 
             <button
                 id="up-button"
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-expect-error
                 onClick={window.scrollToTop}
                 className="fixed bottom-10 right-10 p-3 bg-black text-white rounded-full shadow-lg hover:bg-gray-700 transition-all hidden z-50"
             >

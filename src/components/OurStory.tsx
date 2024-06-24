@@ -3,7 +3,7 @@ import { GiCoffeeBeans } from "react-icons/gi"
 const OurStory = () => {
     
     return (
-        <div id="our-story" className="flex flex-col justify-center items-center relative h-screen">
+        <div id="our-story" className="flex flex-col justify-center items-center relative h-screen px-10">
             <div className='absolute w-full h-screen  bg-black'>
                 <img
                     alt="coffee"

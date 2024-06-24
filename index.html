@@ -28,41 +28,32 @@
         }
     });
 
-    let times = 0;
-
     setTimeout(() => {
-        testimonialsInit()
+        reviewsInit()
         topScrollButtonInit()
         initContactForm()
     }, 1000)
 
-    function testimonialsInit() {
-        const back = document.getElementById("testimonial-go-back")
-        const forward = document.getElementById("testimonial-go-forward")
+    function reviewsInit() {
+        const back = document.getElementById("review-go-back")
+        const forward = document.getElementById("review-go-forward")
         const container = document.getElementById("scroll-container")
 
-        function getMaxTimes() {
-            if (container.offsetWidth === 324) {
-                return 4;
-            } else if (container.offsetWidth === 648) {
-                return 3;
-            } else {
-                return 2;
-            }
+
+        function isAtEnd() {
+            return container.scrollLeft + container.offsetWidth >= container.scrollWidth;
         }
 
+        function isAtStart() {
+            return container.scrollLeft === 0;
+        }
 
         function goBack() {
-            if (times === 0) times = getMaxTimes();
-            else times--;
-
-            container.scrollTo({ left: times * 324, behavior: 'smooth' });
+            container.scrollTo({ left: isAtStart() ? container.scrollWidth : container.scrollLeft - 416, behavior: 'smooth' });
         }
 
         function goForward() {
-            if (times === getMaxTimes()) times = 0;
-            else times++;
-            container.scrollTo({ left: times * 324, behavior: 'smooth' });
+            container.scrollTo({ left: isAtEnd() ? 0 : container.scrollLeft + 416, behavior: 'smooth' });
         }
 
 
@@ -94,9 +85,9 @@
             .getElementById("contact-form")
             .addEventListener("submit", async (e) => {
                 e.preventDefault();
-                
+
                 await submitContact(
-                    document.getElementById("first-name").value+" "+document.getElementById("last-name").value,
+                    document.getElementById("first-name").value + " " + document.getElementById("last-name").value,
                     document.getElementById("email").value,
                     document.getElementById("message").value
                 )

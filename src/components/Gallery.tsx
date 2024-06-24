@@ -2,7 +2,7 @@ import { GiCoffeeBeans } from "react-icons/gi"
 
 const Gallery = () => {
     return (
-        <div id="gallery" className="flex flex-col">
+        <div id="gallery" className="flex flex-col px-10">
             <div className="justify-center items-center flex text-gray-200 flex-col">
                 <h1 className="text-6xl">Gallery</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">

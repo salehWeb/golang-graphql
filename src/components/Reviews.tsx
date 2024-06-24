@@ -47,7 +47,7 @@ const coffeeShopReviews = [
 
 const Reviews = () => {
     return (
-        <div id="reviews" className="flex flex-col justify-center items-center relative h-screen">
+        <div id="reviews" className="flex flex-col justify-center items-center relative h-screen px-10">
             <div className='absolute w-full h-screen bg-black'>
                 <img
                     alt="coffee"
@@ -68,21 +68,21 @@ const Reviews = () => {
                 </div>
 
                 <div className="flex flex-row justify-between gap-8 items-center">
-                    <IoIosArrowBack id="testimonial-go-back" className="text-6xl text-gray-200 cursor-pointer" />
+                    <IoIosArrowBack id="review-go-back" className="text-6xl text-gray-200 cursor-pointer" />
 
-                    <div id="scroll-container" className="w-[calc((2*16px)+(2*16px)+(3*400px))] overflow-x-auto hide-scroll-bar">
-                        <div id="total-container" className="flex flex-row w-[calc((6*16px)+(2*16px)+(8*400px))] gap-4 px-4 items-center">
-                            {coffeeShopReviews.map((testimonial, index) => (
-                                <div key={index} id={`testimonial-${index}`} className="flex flex-col text-gray-200 w-[400px] h-64 bg-[rgba(0,0,0,0.9)] shadow-md py-4 px-12 justify-between items-center">
-                                    <h4 className="text-xl italic">- {testimonial.name} -</h4>
-                                    <h6 className="text-lg text-center">"{testimonial.quote}"</h6>
-                                    <p className="italic text-lg text-center">{testimonial.date}</p>
+                    <div id="scroll-container" className="!w-[calc((2*16px)+(3*400px))] overflow-x-auto hide-scroll-bar">
+                        <div id="total-container" className="flex flex-row !w-[calc((6*16px)+(8*400px))] gap-4 items-center">
+                            {coffeeShopReviews.map((review, index) => (
+                                <div key={index} id={`review-${index}`} className="flex flex-col text-gray-200 !w-[400px] h-64 bg-[rgba(0,0,0,0.9)] shadow-md py-4 px-12 justify-between items-center">
+                                    <h4 className="text-xl italic">- {review.name} -</h4>
+                                    <h6 className="text-lg text-center">"{review.quote}"</h6>
+                                    <p className="italic text-lg text-center">{review.date}</p>
                                 </div>
                             ))}
                         </div>
                     </div>
 
-                    <IoIosArrowForward id="testimonial-go-forward" className="text-6xl text-gray-200 cursor-pointer" />
+                    <IoIosArrowForward id="review-go-forward" className="text-6xl text-gray-200 cursor-pointer" />
                 </div>
 
 

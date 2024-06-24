@@ -2,7 +2,7 @@ import { GiCoffeeBeans } from "react-icons/gi"
 
 const Contact = () => {
   return (
-    <div id="contact" className="flex flex-col gap-10 justify-between items-center">
+    <div id="contact" className="flex flex-col gap-10 justify-between items-center px-10">
 
       <div className="justify-center items-center flex text-gray-200 flex-col">
         <h1 className="text-6xl">Contact Us</h1>
@@ -23,7 +23,7 @@ const Contact = () => {
           <input type="text" id="email" className="w-full p-2 bg-[rgb(50,50,50)] rounded-md focus:outline-gray-200 outline-none text-gray-200" placeholder="Email" />
           <textarea id="message" className="resize-none h-40 w-full p-2 bg-[rgb(50,50,50)] rounded-md focus:outline-gray-200 outline-none text-gray-200" placeholder="Message" />
 
-          <button type="submit" className="bg-gray-800 py-4 px-8 w-fit hover:bg-transparent hover:outline-2 outline-0 text-xl outline hover:rounded-md transition-all text-gray-200">
+          <button type="submit" className="bg-[rgb(50,50,50)] py-4 px-8 w-fit hover:bg-transparent hover:outline-2 outline-0 text-xl outline hover:rounded-md transition-all text-gray-200">
             Submit
           </button>
         </form>

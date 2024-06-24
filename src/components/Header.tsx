@@ -1,6 +1,6 @@
 const Header = () => {
     return (
-        <header className="flex flex-row justify-between px-10 py-2 z-10  text-gray-200 bg-transparent items-center w-full">
+        <header className="flex flex-row justify-between py-2 z-10  text-gray-200 bg-transparent items-center w-full">
             <a href="#home" className="flex flex-col text-center">
             <img src="/logo.svg" alt="logo" className="h-28"/>
             </a>
@@ -35,4 +35,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
