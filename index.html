@@ -12,28 +12,114 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
 </body>
-<script>
-    function openModal(modalId) {
-        const modal = document.getElementById(modalId);
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.classList.add('overflow-hidden');
+
+<script id="hamburger-menu">
+    function init55() {
+        const menuButton = document.getElementById('menu-button');
+        const menuList = document.getElementById('menu-list');
+
+        menuButton.addEventListener('click', () => {
+            menuList.classList.toggle('-right-96');
+            menuList.classList.toggle('right-0');
+            menuButton.children[0].classList.toggle('rotate-45');
+            menuButton.children[0].classList.toggle('translate-y-2.5');
+            menuButton.children[1].classList.toggle('opacity-0');
+            menuButton.children[2].classList.toggle('-rotate-45');
+            menuButton.children[2].classList.toggle('-translate-y-2.5');
+        });
+    };
+
+    setTimeout(() => { init55() }, 1000);
+</script>
+
+<script id="menu-carousel">
+    function init() {
+        /*** @type {SVGElement[]} */
+        const prevElements = document.getElementsByClassName("menu-prev")
+        for (const element of prevElements) {
+
+            element.addEventListener("click", (ev) => {
+                /*** @type {HTMLDivElement} */
+                const container = element.parentElement.children[1];
+                const isStart = container.scrollLeft === 0;
+
+                container.scrollTo({ left: isStart ? container.scrollWidth : container.scrollLeft - 432, behavior: 'smooth' });
+            })
+        }
+
+        /*** @type {SVGElement[]} */
+        const nextElements = document.getElementsByClassName("menu-next")
+        for (const element of nextElements) {
+
+            element.addEventListener("click", (ev) => {
+                /*** @type {HTMLDivElement} */
+                const container = element.parentElement.children[1];
+                const isEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth;
+
+                container.scrollTo({ left: isEnd ? 0 : container.scrollLeft + 432, behavior: 'smooth' });
+            })
+        }
     }
 
-    document.addEventListener('click', (event) => {
-        if (event.target.classList.contains('bg-modal')) {
-            event.target.classList.remove('flex');
-            event.target.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+    setTimeout(() => { init() }, 1000);
+</script>
+
+<script id="gallery-carousel">
+    let currentImage;
+    let isOpen = false;
+
+    function openModal() {
+        const modal = document.getElementById("bg-modal");
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        isOpen = true;
+    }
+
+    function openImage(imageId) {
+        currentImage = imageId;
+
+        const img = document.getElementById("gallery-img");
+        img.src = `/gallery/${currentImage}.webp`;
+
+        if (!isOpen) openModal()
+    }
+
+    function initGalleryModal() {
+        const modal = document.getElementById("bg-modal")
+        const close = document.getElementById("gallery-close")
+        const next = document.getElementById("gallery-next")
+        const prev = document.getElementById("gallery-prev")
+
+        function closeGalleryModal() {
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+            isOpen = false;
         }
-    });
 
-    setTimeout(() => {
-        reviewsInit()
-        topScrollButtonInit()
-        initContactForm()
-    }, 1000)
+        function nextImage() {
+            if (currentImage === 8) currentImage = 1
+            else currentImage++
 
+            openImage(currentImage);
+        }
+
+        function prevImage() {
+            if (currentImage === 1) currentImage = 8
+            else currentImage--
+
+            openImage(currentImage);
+        }
+
+        close.addEventListener("click", closeGalleryModal)
+        next.addEventListener("click", nextImage)
+        prev.addEventListener("click", prevImage)
+    }
+
+    setTimeout(() => { initGalleryModal() }, 1000)
+</script>
+
+<script id="reviews-carousel">
     function reviewsInit() {
         const back = document.getElementById("review-go-back")
         const forward = document.getElementById("review-go-forward")
@@ -49,11 +135,11 @@
         }
 
         function goBack() {
-            container.scrollTo({ left: isAtStart() ? container.scrollWidth : container.scrollLeft - 416, behavior: 'smooth' });
+            container.scrollTo({ left: isAtStart() ? container.scrollWidth : container.scrollLeft - 316, behavior: 'smooth' });
         }
 
         function goForward() {
-            container.scrollTo({ left: isAtEnd() ? 0 : container.scrollLeft + 416, behavior: 'smooth' });
+            container.scrollTo({ left: isAtEnd() ? 0 : container.scrollLeft + 316, behavior: 'smooth' });
         }
 
 
@@ -61,7 +147,28 @@
         forward.addEventListener("click", (e) => goForward())
     }
 
+    setTimeout(() => { reviewsInit() }, 1000)
+</script>
 
+<script id="contact-form">
+    function initContactForm() {
+        document
+            .getElementById("contact-form")
+            .addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                await submitContact(
+                    document.getElementById("first-name").value + " " + document.getElementById("last-name").value,
+                    document.getElementById("email").value,
+                    document.getElementById("message").value
+                )
+            })
+    }
+
+    setTimeout(() => { initContactForm() }, 1000)
+</script>
+
+<script id="top-scroll-button">
     function handleScrollTop() {
         const heroElement = document.getElementById('home');
         const rect = heroElement.getBoundingClientRect();
@@ -80,20 +187,7 @@
         window.addEventListener('scroll', handleScrollTop);
     }
 
-    function initContactForm() {
-        document
-            .getElementById("contact-form")
-            .addEventListener("submit", async (e) => {
-                e.preventDefault();
-
-                await submitContact(
-                    document.getElementById("first-name").value + " " + document.getElementById("last-name").value,
-                    document.getElementById("email").value,
-                    document.getElementById("message").value
-                )
-            })
-    }
-
+    setTimeout(() => { topScrollButtonInit() }, 1000)
 </script>
 
 </html>

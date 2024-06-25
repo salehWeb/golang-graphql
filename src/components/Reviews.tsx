@@ -47,7 +47,7 @@ const coffeeShopReviews = [
 
 const Reviews = () => {
     return (
-        <div id="reviews" className="flex flex-col justify-center items-center relative h-screen px-10">
+        <div id="reviews" className="flex flex-col justify-center items-center relative h-screen lg:px-10 md:px-8 sm:px-6 px-4">
             <div className='absolute w-full h-screen bg-black'>
                 <img
                     alt="coffee"
@@ -59,21 +59,21 @@ const Reviews = () => {
 
             <div className="flex flex-col z-10 gap-10">
                 <div className="justify-center items-center flex text-gray-200 flex-col">
-                    <h1 className="text-6xl">Reviews</h1>
+                    <h1 className="md:text-6xl text-4xl">Reviews</h1>
                     <div className="flex flex-row gap-2 justify-center items-center">
-                        <hr className="h-px w-20" />
-                        <GiCoffeeBeans className="text-4xl" />
-                        <hr className="h-px w-20" />
+                    <hr className="h-px md:w-20 w-16" />
+                        <GiCoffeeBeans className="md:text-4xl text-3xl" />
+                        <hr className="h-px md:w-20 w-16" />
                     </div>
                 </div>
 
                 <div className="flex flex-row justify-between gap-8 items-center">
-                    <IoIosArrowBack id="review-go-back" className="text-6xl text-gray-200 cursor-pointer" />
+                    <IoIosArrowBack id="review-go-back" className="text-6xl text-gray-200 cursor-pointer sm:flex hidden" />
 
-                    <div id="scroll-container" className="!w-[calc((2*16px)+(3*400px))] overflow-x-auto hide-scroll-bar">
-                        <div id="total-container" className="flex flex-row !w-[calc((6*16px)+(8*400px))] gap-4 items-center">
+                    <div id="scroll-container" className="lg:!w-[calc((2*16px)+(3*300px))] md:!w-[calc((16px)+(2*300px))] !w-[300px] overflow-x-auto hide-scroll-bar">
+                        <div id="total-container" className="flex flex-row !w-[calc((6*16px)+(8*300px))] gap-4 items-center">
                             {coffeeShopReviews.map((review, index) => (
-                                <div key={index} id={`review-${index}`} className="flex flex-col text-gray-200 !w-[400px] h-64 bg-[rgba(0,0,0,0.9)] shadow-md py-4 px-12 justify-between items-center">
+                                <div key={index} id={`review-${index}`} className="flex flex-col text-gray-200 !w-[300px] h-64 bg-[rgba(0,0,0,0.9)] shadow-md py-4 px-12 justify-between items-center">
                                     <h4 className="text-xl italic">- {review.name} -</h4>
                                     <h6 className="text-lg text-center">"{review.quote}"</h6>
                                     <p className="italic text-lg text-center">{review.date}</p>
@@ -82,7 +82,7 @@ const Reviews = () => {
                         </div>
                     </div>
 
-                    <IoIosArrowForward id="review-go-forward" className="text-6xl text-gray-200 cursor-pointer" />
+                    <IoIosArrowForward id="review-go-forward" className="text-6xl text-gray-200 cursor-pointer sm:flex hidden" />
                 </div>
 
 

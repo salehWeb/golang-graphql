@@ -1,22 +1,39 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { GiCoffeeBeans } from "react-icons/gi"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 const Gallery = () => {
     return (
-        <div id="gallery" className="flex flex-col px-10">
+        <div id="gallery" className="flex flex-col lg:px-10 md:px-8 sm:px-6 px-4">
             <div className="justify-center items-center flex text-gray-200 flex-col">
-                <h1 className="text-6xl">Gallery</h1>
+                <h1 className="md:text-6xl text-4xl">Gallery</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">
-                    <hr className="h-px w-20" />
-                    <GiCoffeeBeans className="text-4xl" />
-                    <hr className="h-px w-20" />
+                    <hr className="h-px md:w-20 w-16" />
+                    <GiCoffeeBeans className="md:text-4xl text-3xl" />
+                    <hr className="h-px md:w-20 w-16" />
                 </div>
             </div>
 
-            <div className="gap-8 grid grid-cols-4 my-8">
+            <div className="gap-8 grid lg:grid-cols-4 md:grid-cols-2 grid-cols my-8">
                 {Array.from({ length: 8 }).map((_, item) => (
                     <Item item={item + 1} key={item} />
                 ))}
             </div>
+
+            <div id="bg-modal" className="fixed gap-8 top-0 left-0 w-full h-full bg-black bg-opacity-50 items-center justify-center hidden">
+                <div className="!h-[80vh] flex flex-col justify-center">
+                    <IoIosArrowBack id="gallery-prev" className="text-6xl text-gray-200 cursor-pointer" />
+                </div>
+
+                <img id="gallery-img" className="!w-[70vw] object-contain rounded-lg shadow-lg" />
+
+                <div className="!h-[80vh] flex flex-col justify-center relative">
+                    <IoClose id="gallery-close" className="text-6xl text-gray-200 cursor-pointer absolute top-0" />
+                    <IoIosArrowForward id="gallery-next" className="text-6xl text-gray-200 cursor-pointer" />
+                </div>
+            </div>
+
         </div>
     )
 }
@@ -27,18 +44,14 @@ export default Gallery;
 
 const Item = (props: { item: number }) => {
     return (
-        <>
-            <div className="flex flex-col">
-                {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                {/* @ts-ignore */}
-                <a href={"#modal" + props.item} className="cursor-pointer" onClick={() => window.openModal('modal' + props.item)}>
-                    <img src={`/gallery/${props.item}.webp`} className="rounded-lg shadow-md hover:shadow-lg transition duration-300" />
-                </a>
-            </div>
+        <div className="flex flex-col">
 
-            <div id={"modal" + props.item} className="fixed top-0 left-0 bg-modal w-full h-full bg-black bg-opacity-50 items-center justify-center hidden">
-                <img src={`/gallery/${props.item}.webp`} className="!h-[80vh] object-contain rounded-lg shadow-lg" />
-            </div>
-        </>
+            <a className="lg:cursor-pointer" onClick={() => {
+                {/* @ts-ignore */ }
+                if (window.outerWidth >= 1024 && window.innerWidth >= 1024) window.openImage(props.item)
+            }}>
+                <img src={`/gallery/${props.item}.webp`} className="rounded-lg shadow-md hover:shadow-lg transition duration-300" />
+            </a>
+        </div>
     )
 }

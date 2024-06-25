@@ -1,4 +1,5 @@
 import { GiCoffeeBeans } from "react-icons/gi";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const tea = [
     {
@@ -101,42 +102,65 @@ const coffee = [
 
 const Menu = () => {
     return (
-        <div id="menu" className="flex w-full flex-col gap-10 px-10">
+        <div id="menu" className="flex w-full flex-col gap-10 lg:px-10 md:px-8 sm:px-6 px-4">
             <div className="justify-center items-center flex text-gray-200 flex-col">
-                <h1 className="text-6xl">Explore Our Menu</h1>
+                <h1 className="md:text-6xl text-4xl">Explore Our Menu</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">
-                    <hr className="h-px w-20" />
-                    <GiCoffeeBeans className="text-4xl" />
-                    <hr className="h-px w-20" />
+                    <hr className="h-px md:w-20 w-16" />
+                    <GiCoffeeBeans className="md:text-4xl text-3xl" />
+                    <hr className="h-px md:w-20 w-16" />
                 </div>
             </div>
 
-            <div className="w-full grid grid-cols-3">
-                <div className="flex items-center justify-center flex-col text-gray-200 gap-4">
-                    <h2 className="text-4xl">Coffee</h2>
-                    <div className="flex flex-col gap-8">
-                        {coffee.map((item, index) => (
-                            <Item {...item} key={index} />
-                        ))}
+            <div className="w-full grid grid-rows-3 gap-20">
+
+                <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
+                    <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Coffee</h2>
+                    <div className="w-full flex flex-row items-center md:gap-8 gap-4">
+                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
+                            <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
+                                {coffee.map((item, index) => (
+                                    <Item {...item} key={index} />
+                                ))}
+                            </div>
+                        </div>
+                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
                     </div>
                 </div>
-                <div className="flex items-center justify-center flex-col text-gray-200 gap-4">
-                    <h2 className="text-4xl">Tea</h2>
-                    <div className="flex flex-col gap-8">
-                        {tea.map((item, index) => (
-                            <Item {...item} key={index} />
-                        ))}
+
+                <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
+                    <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Tea</h2>
+                    <div className="w-full flex flex-row items-center md:gap-8 gap-4">
+                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
+                            <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
+                                {tea.map((item, index) => (
+                                    <Item {...item} key={index} />
+                                ))}
+                            </div>
+                        </div>
+                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
                     </div>
                 </div>
-                <div className="flex items-center justify-center flex-col text-gray-200 gap-4">
-                    <h2 className="text-4xl">Pastries</h2>
-                    <div className="flex flex-col gap-8">
-                        {pastries.map((item, index) => (
-                            <Item {...item} key={index} />
-                        ))}
+
+                <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
+                    <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Pastries</h2>
+                    <div className="w-full flex flex-row items-center md:gap-8 gap-4">
+                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
+                            <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
+                                {pastries.map((item, index) => (
+                                    <Item {...item} key={index} />
+                                ))}
+                            </div>
+                        </div>
+                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
                     </div>
                 </div>
+
             </div>
+
         </div>
     )
 }
@@ -146,7 +170,7 @@ export default Menu;
 
 const Item = (props: typeof coffee[0]) => {
     return (
-        <div className="flex flex-col rounded-3xl text-gray-200  bg-black overflow-hidden w-[400px] h-[400px] justify-between">
+        <div className="flex flex-col rounded-3xl text-gray-200  bg-black overflow-hidden !w-[300px] !h-[350px] gap-4">
             <img src={props.img} alt="" />
             <div className="flex flex-col gap-2 p-4">
                 <div className="flex text-2xl flex-row gap-8">

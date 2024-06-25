@@ -2,16 +2,16 @@ import { GiCoffeeBeans } from "react-icons/gi"
 
 const Order = () => {
     return (
-        <div id="order" className="flex flex-col px-10">
+        <div id="order" className="flex flex-col lg:px-10 md:px-8 sm:px-6 px-4">
             <div className="justify-center items-center flex text-gray-200 flex-col">
-                <h1 className="text-6xl">Order Now</h1>
+                <h1 className="md:text-6xl text-4xl">Order Now</h1>
                 <div className="flex flex-row gap-2 justify-center items-center">
                     <hr className="h-px w-20" />
                     <GiCoffeeBeans className="text-4xl" />
                     <hr className="h-px w-20" />
                 </div>
 
-                <p className="text-2xl w-[600px] text-center my-8">Choose your preferred delivery service and get our delicious coffee and pastries delivered to your door.</p>
+                <p className="text-2xl lg:w-[600px] text-center my-8">Choose your preferred delivery service and get our delicious coffee and pastries delivered to your door.</p>
             </div>
 
 
