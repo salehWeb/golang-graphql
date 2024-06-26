@@ -32,9 +32,6 @@ const Hero = () => {
 
             <button
                 id="up-button"
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-expect-error
-                onClick={window.scrollToTop}
                 className="fixed bottom-10 right-10 p-3 bg-black text-white rounded-md shadow-lg hover:bg-gray-700 transition-all hidden z-50"
             >
                 <FaArrowUp className="text-2xl" />

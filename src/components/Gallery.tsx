@@ -45,13 +45,9 @@ export default Gallery;
 const Item = (props: { item: number }) => {
     return (
         <div className="flex flex-col">
-
-            <a className="lg:cursor-pointer" onClick={() => {
-                {/* @ts-ignore */ }
-                if (window.outerWidth >= 1024 && window.innerWidth >= 1024) window.openImage(props.item)
-            }}>
-                <img src={`/gallery/${props.item}.webp`} className="rounded-lg shadow-md hover:shadow-lg transition duration-300" />
-            </a>
+            <div className="lg:cursor-pointer">
+                <img src={`/gallery/${props.item}.webp`} id={`GALLERY_${props.item}`} className="rounded-lg shadow-md hover:shadow-lg transition duration-300" />
+            </div>
         </div>
     )
 }

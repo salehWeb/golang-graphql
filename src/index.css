@@ -7,7 +7,7 @@ body {
     font-family: "Noto Serif", serif;
 }
 
-html {
+html, body {
     scroll-behavior: smooth;
     overflow-x: hidden;
 }

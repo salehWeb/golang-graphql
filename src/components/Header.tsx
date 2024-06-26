@@ -47,7 +47,7 @@ const Header = () => {
                 </button>
             </div>
 
-            <ul id="menu-list" className="bg-gray-800 shadow-lg absolute p-4 z-auto flex flex-col -right-96 top-20 transition-all duration-300 ease-in-out w-60 gap-8">
+            <ul id="menu-list" className="bg-black shadow-lg absolute p-4 z-auto flex flex-col -right-96 top-20 transition-all duration-300 ease-in-out w-60 gap-8">
                 <List />
             </ul>
 
