@@ -5,32 +5,44 @@ const tea = [
     {
         name: "Black Tea",
         description: "Strong and robust black tea, perfect for any time of day.",
-        img: "items/blacktea_1.5 1.png",
+        img: "items/blacktea.webp",
         price: "$3.00"
     },
     {
         name: "Green Tea",
         description: "Fresh and healthy green tea with a delicate flavor.",
-        img: "items/Green_tea_recipe_1.5 1.png",
+        img: "items/Green_tea_recipe.webp",
         price: "$3.00"
     },
     {
         name: "Herbal Tea",
         description: "Caffeine-free herbal blends for relaxation.",
-        img: "items/Herbal_Tea_1.5 1.png",
+        img: "items/Herbal_Tea.webp",
         price: "$3.50"
     },
     {
         name: "Iced Tea",
         description: "Refreshing cold tea, available in various flavors.",
-        img: "items/island-iced-tea_1.5 1.png",
+        img: "items/island-iced-tea.webp",
         price: "$3.00"
     },
     {
         name: "Chai Latte",
         description: "Spiced tea with steamed milk and a hint of sweetness.",
-        img: "items/Chai-Latte_1.5 1.png",
+        img: "items/Chai-Latte.webp",
         price: "$4.00"
+    },
+    {
+        name: "Oolong Tea",
+        description: "Smooth and fragrant, a perfect balance of flavor.",
+        img: "items/oolong-tea.webp",
+        price: "$3.50"
+    },
+    {
+        name: "Matcha",
+        description: "Vibrant green tea powder whisked to perfection.",
+        img: "items/matcha.webp",
+        price: "$4.50"
     }
 ];
 
@@ -38,32 +50,44 @@ const pastries = [
     {
         name: "Bagel",
         description: "Toasted bagel with cream cheese or butter.",
-        img: "items/bagels_1.5 1.png",
+        img: "items/bagels.webp",
         price: "$2.00"
     },
     {
         name: "Brownie",
         description: "Rich and fudgy chocolate brownie.",
-        img: "items/Brownie_1.5 1.png",
+        img: "items/Brownie.webp",
         price: "$2.50"
     },
     {
         name: "Croissant",
         description: "Flaky and buttery pastry, perfect with coffee.",
-        img: "items/croissants_1.5 1.png",
+        img: "items/croissants.webp",
         price: "$2.50"
     },
     {
         name: "Muffin",
         description: "Soft and moist, available in various flavors.",
-        img: "items/Muffin_1.5 1.png",
+        img: "items/Muffin.webp",
         price: "$2.50"
     },
     {
         name: "Scone",
         description: "Light and crumbly, served with jam and cream.",
-        img: "items/scones-jam-cream_1.5 1.png",
+        img: "items/scones.webp",
         price: "$2.50"
+    },
+    {
+        name: "Danish",
+        description: "Sweet pastry with a fruity or creamy filling.",
+        img: "items/danish.webp",
+        price: "$3.00"
+    },
+    {
+        name: "Cinnamon Roll",
+        description: "Soft, sweet roll with cinnamon and icing.",
+        img: "items/cinnamon-roll.webp",
+        price: "$3.00"
     }
 ];
 
@@ -71,34 +95,47 @@ const coffee = [
     {
         name: "Americano",
         description: "Espresso with hot water, creating a light cream.",
-        img: "items/Americano_1.5 1.png",
+        img: "items/Americano.webp",
         price: "$3.50"
     },
     {
         name: "Latte",
         description: "Smooth espresso with steamed milk and a light layer of foam.",
-        img: "items/caffe-latte_1.5 1.png",
+        img: "items/caffe-latte.webp",
         price: "$4.50"
     },
     {
         name: "Cappuccino",
         description: "Espresso with steamed milk, chocolate syrup, and whipped cream.",
-        img: "items/cappuccino_1.5 1.png",
+        img: "items/cappuccino.webp",
         price: "$4.00"
     },
     {
         name: "Espresso",
         description: "A rich and intense shot of coffee.",
-        img: "items/espresso_1.5 1.png",
+        img: "items/espresso.webp",
         price: "$3.00"
     },
     {
         name: "Mocha",
         description: "Espresso with steamed milk, chocolate syrup, and whipped cream.",
-        img: "items/mocha_1.5 1.png",
+        img: "items/mocha.webp",
         price: "$5.00"
+    },
+    {
+        name: "Affogato",
+        description: "Espresso poured over a scoop of vanilla ice cream.",
+        img: "items/affogato.webp",
+        price: "$4.50"
+    },
+    {
+        name: "Macchiato",
+        description: "Espresso marked with a small amount of steamed milk.",
+        img: "items/macchiato.webp",
+        price: "$3.50"
     }
 ];
+
 
 const Menu = () => {
     return (

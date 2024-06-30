@@ -15,7 +15,7 @@ const Gallery = () => {
                 </div>
             </div>
 
-            <div className="gap-8 grid lg:grid-cols-4 md:grid-cols-2 grid-cols my-8">
+            <div className="gap-8 grid lg:grid-cols-4 md:grid-cols-2 grid-cols my-8" id="gallery-items-container">
                 {Array.from({ length: 8 }).map((_, item) => (
                     <Item item={item + 1} key={item} />
                 ))}

@@ -8,7 +8,7 @@ const Hero = () => {
             <div className="absolute w-full h-screen bg-black">
                 <div
                     className="absolute top-0 left-0 w-full h-full bg-cover bg-center opacity-40"
-                    style={{ backgroundImage: `url('/bg.png')` }}
+                    style={{ backgroundImage: `url('/bg.webp')` }}
                 >
                 </div>
             </div>

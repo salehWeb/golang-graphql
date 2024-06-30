@@ -94,6 +94,7 @@
         const close = document.getElementById("gallery-close")
         const next = document.getElementById("gallery-next")
         const prev = document.getElementById("gallery-prev")
+        const container = document.getElementById("gallery-items-container")
 
         function closeGalleryModal() {
             modal.classList.remove('flex');
@@ -102,7 +103,7 @@
         }
 
         function nextImage() {
-            if (currentImage === 8) currentImage = 1
+            if (currentImage === container.children.length) currentImage = 1
             else currentImage++
 
             openImage(currentImage);

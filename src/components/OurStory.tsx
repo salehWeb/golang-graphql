@@ -1,18 +1,18 @@
 import { GiCoffeeBeans } from "react-icons/gi"
 
 const OurStory = () => {
-    
+
     return (
-        <div id="our-story" className="flex flex-col justify-center items-center relative h-screen lg:px-10 md:px-8 sm:px-6 px-4">
-            <div className='absolute w-full h-screen  bg-black'>
+        <div id="our-story" className="flex flex-col justify-center items-center h-[800px] relative sm:h-screen lg:px-10 md:px-8 sm:px-6 px-4">
+            <div className='absolute w-full sm:h-screen  bg-black'>
                 <img
                     alt="coffee"
-                    src="/about-us-bg.jpg"
-                    className='object-cover w-full h-screen opacity-40'
+                    src="/about-us-bg.webp"
+                    className='object-cover w-full h-[800px] sm:h-screen opacity-40'
                 />
             </div>
 
-            <div className="bg-[rgba(0,0,0,0.9)] lg:w-[800px] lg:h-[600px] w-full z-10 md:p-8 p-4 rounded-md text-gray-200 text-center justify-between flex flex-col">
+            <div className="bg-[rgba(0,0,0,0.9)] lg:w-[800px] lg:h-[600px] w-full z-10 md:p-8 sm:p-4 p-2 rounded-md text-gray-200 text-center justify-between flex flex-col">
                 <div>
                     <h1 className="md:text-6xl text-4xl">Our Story</h1>
                     <div className="flex flex-row gap-2 justify-center items-center">
