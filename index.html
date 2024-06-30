@@ -45,7 +45,7 @@
                 const container = element.parentElement.children[1];
                 const isStart = container.scrollLeft === 0;
 
-                container.scrollTo({ left: isStart ? container.scrollWidth : container.scrollLeft - 432, behavior: 'smooth' });
+                container.scrollTo({ left: isStart ? container.scrollWidth : container.scrollLeft - 332, behavior: 'smooth' });
             })
         }
 
@@ -58,7 +58,7 @@
                 const container = element.parentElement.children[1];
                 const isEnd = container.scrollLeft + container.offsetWidth >= container.scrollWidth;
 
-                container.scrollTo({ left: isEnd ? 0 : container.scrollLeft + 432, behavior: 'smooth' });
+                container.scrollTo({ left: isEnd ? 0 : container.scrollLeft + 332, behavior: 'smooth' });
             })
         }
     }

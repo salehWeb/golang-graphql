@@ -154,7 +154,9 @@ const Menu = () => {
                 <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
                     <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Coffee</h2>
                     <div className="w-full flex flex-row items-center md:gap-8 gap-4">
-                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowBack />
+                        </div>
                         <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
                             <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
                                 {coffee.map((item, index) => (
@@ -162,14 +164,18 @@ const Menu = () => {
                                 ))}
                             </div>
                         </div>
-                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowForward />
+                        </div>
                     </div>
                 </div>
 
                 <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
                     <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Tea</h2>
                     <div className="w-full flex flex-row items-center md:gap-8 gap-4">
-                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowBack />
+                        </div>
                         <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
                             <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
                                 {tea.map((item, index) => (
@@ -177,14 +183,18 @@ const Menu = () => {
                                 ))}
                             </div>
                         </div>
-                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowForward />
+                        </div>
                     </div>
                 </div>
 
                 <div className="flex flex-col overflow-x-hidden md:gap-8 gap-4">
                     <h2 className="md:text-5xl text-3xl text-gray-200 md:ml-20">Pastries</h2>
                     <div className="w-full flex flex-row items-center md:gap-8 gap-4">
-                        <IoIosArrowBack className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-prev lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowBack />
+                        </div>
                         <div className="flex flex-col overflow-x-auto gap-8 hide-scroll-bar">
                             <div className="flex w-fit text-gray-200 flex-row gap-8 justify-center items-center">
                                 {pastries.map((item, index) => (
@@ -192,7 +202,9 @@ const Menu = () => {
                                 ))}
                             </div>
                         </div>
-                        <IoIosArrowForward className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer" />
+                        <div className="menu-next lg:text-6xl md:text-5xl text-4xl sm:flex hidden text-gray-200 cursor-pointer">
+                            <IoIosArrowForward />
+                        </div>
                     </div>
                 </div>
 
