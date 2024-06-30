@@ -204,8 +204,9 @@
     function handleScrollTop() {
         const heroElement = document.getElementById('home');
         const rect = heroElement.getBoundingClientRect();
-        const isHeroVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
         const upButton = document.getElementById("up-button");
+
+        const isHeroVisible = (Math.abs(rect.top) - rect.height) < 0;
 
         if (isHeroVisible) upButton.classList.add("hidden")
         else upButton.classList.remove("hidden")

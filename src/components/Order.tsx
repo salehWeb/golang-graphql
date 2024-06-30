@@ -17,15 +17,15 @@ const Order = () => {
 
 
             <div className="gap-4 flex flex-row justify-center items-center">
-                <a href="UBER_EATS_LINK" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
+                <a href="UBER_EATS_LINK" target="_blank" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
                     <img className="w-40" src="deliveryIcons/ubereats.svg" alt="Order on Uber Eats" />
                 </a>
 
-                <a href="DOORDASH_LINK" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
+                <a href="DOORDASH_LINK" target="_blank" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
                     <img className="w-40" src="deliveryIcons/doordash.svg" alt="Order on DoorDash" />
                 </a>
 
-                <a href="GRUBHUB_LINK" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
+                <a href="GRUBHUB_LINK" target="_blank" className="p-4 rounded-lg shadow-md hover:shadow-lg flex justify-center items-center bg-gray-200 w-[200px] h-[60px]">
                     <img className="w-40" src="deliveryIcons/grubhub.svg" alt="Order on Grubhub" />
                 </a>
             </div>
