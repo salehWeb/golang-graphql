@@ -222,9 +222,9 @@ const Item = (props: typeof coffee[0]) => {
         <div className="flex flex-col rounded-3xl text-gray-200  bg-black overflow-hidden !w-[300px] !h-[350px] gap-4">
             <img src={props.img} alt="" />
             <div className="flex flex-col gap-2 p-4">
-                <div className="flex text-2xl flex-row gap-8">
-                    <h3>{props.name}</h3>
-                    <span>{props.price}</span>
+                <div className="flex text-2xl flex-row">
+                    <h3 className="flex-1 text-start">{props.name}</h3>
+                    <span className="text-end">{props.price}</span>
                 </div>
                 <p>{props.description}</p>
             </div>

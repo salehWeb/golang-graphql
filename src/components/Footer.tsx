@@ -29,9 +29,9 @@ const Footer = () => {
           <div className="flex flex-col md:gap-8 gap-4 items-center h-full text-center">
             <h4 className="md:text-2xl text-xl">Contact info</h4>
             <p className="md:text-lg text-base">
-              (123) 456-7890
+              <a href="tel:+1234567890" className="hover:underline text-blue-400">(123) 456-7890</a>
               <br />
-              abc@gmail.com
+              <a href="mailto:abc@gmail.com" className="hover:underline text-blue-400">abc@gmail.com</a>
             </p>
           </div>
 
