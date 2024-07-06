@@ -54,8 +54,8 @@ const pastries = [
         price: "$2.00"
     },
     {
-        name: "Brownie",
-        description: "Rich and fudgy chocolate brownie.",
+        name: "Decadent Fudgy Chocolate Brownie",
+        description: "This brownie offers a rich chocolate flavor and a moist, chewy texture. Made with premium cocoa and chocolate chunks, it's perfect for chocolate lovers.",
         img: "items/Brownie.webp",
         price: "$2.50"
     },
@@ -219,14 +219,16 @@ export default Menu;
 
 const Item = (props: typeof coffee[0]) => {
     return (
-        <div className="flex flex-col rounded-3xl text-gray-200  bg-black overflow-hidden !w-[300px] !h-[350px] gap-4">
-            <img src={props.img} alt="" />
-            <div className="flex flex-col gap-2 p-4">
-                <div className="flex text-2xl flex-row">
-                    <h3 className="flex-1 text-start">{props.name}</h3>
-                    <span className="text-end">{props.price}</span>
+        <div className="flex flex-col rounded-3xl overflow-y-auto thin-scrollbar !w-[300px] !h-[350px]">
+            <div className="text-gray-200  bg-black gap-4 flex flex-col w-full flex-grow">
+                <img src={props.img} alt="" />
+                <div className="flex flex-col gap-2 p-4">
+                    <div className="flex text-2xl flex-row h-auto">
+                        <h3 className="flex-1 text-start w-2/3 mr-2 text-wrap">{props.name}</h3>
+                        <span className="text-end w-1/3">{props.price}</span>
+                    </div>
+                    <p>{props.description}</p>
                 </div>
-                <p>{props.description}</p>
             </div>
         </div>
     )
