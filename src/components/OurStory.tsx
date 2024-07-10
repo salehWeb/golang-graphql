@@ -12,7 +12,7 @@ const OurStory = () => {
                 />
             </div>
 
-            <div className="bg-[rgba(0,0,0,0.9)] lg:w-[800px] lg:h-[600px] w-full z-10 md:p-8 sm:p-4 p-2 rounded-md text-gray-200 text-center justify-between flex flex-col">
+            <div className="bg-[rgba(0,0,0,0.9)] lg:w-[800px] lg:h-[600px] rounded-3xl w-full z-10 md:p-8 sm:p-4 p-2 text-gray-200 text-center justify-between flex flex-col">
                 <div>
                     <h1 className="md:text-6xl text-4xl">Our Story</h1>
                     <div className="flex flex-row gap-2 justify-center items-center">

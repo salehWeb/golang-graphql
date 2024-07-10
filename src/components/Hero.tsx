@@ -25,7 +25,7 @@ const Hero = () => {
                 </div>
                 <p className="md:text-2xl text-xl text-center">Come and enjoy our distinctive coffees in a warm, inviting atmosphere.</p>
 
-                <a href="#order" className="bg-black md:py-4 md:px-8 py-2 px-4 hover:bg-transparent hover:outline-2 outline-0 md:text-xl text-lg outline hover:rounded-md transition-all">
+                <a href="#order" className="bg-black md:py-4 md:px-8 py-2 px-4 hover:bg-transparent hover:outline-2 outline-0 md:text-xl text-lg outline rounded-md transition-all">
                     Order Now
                 </a>
             </div>

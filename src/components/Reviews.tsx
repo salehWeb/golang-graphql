@@ -70,10 +70,10 @@ const Reviews = () => {
                 <div className="flex flex-row justify-between gap-8 items-center">
                     <IoIosArrowBack id="review-go-back" className="text-6xl text-gray-200 cursor-pointer sm:flex hidden" />
 
-                    <div id="scroll-container" className="lg:!w-[calc((2*16px)+(3*300px))] md:!w-[calc((16px)+(2*300px))] !w-[300px] overflow-x-auto hide-scroll-bar">
-                        <div id="total-container" className="flex flex-row !w-[calc((6*16px)+(8*300px))] gap-4 items-center">
+                    <div id="scroll-container" className="2xl:!w-[calc((2*16px)+(3*350px))] lg:!w-[calc((16px)+(2*350px))] !w-[350px] overflow-x-auto hide-scroll-bar">
+                        <div id="total-container" className="flex flex-row !w-[calc((6*16px)+(8*350px))] gap-4 items-center">
                             {coffeeShopReviews.map((review, index) => (
-                                <div key={index} id={`review-${index}`} className="flex flex-col text-gray-200 !w-[300px] h-64 bg-[rgba(0,0,0,0.9)] shadow-md py-4 px-12 justify-between items-center">
+                                <div key={index} id={`review-${index}`} className="flex flex-col text-gray-200 !w-[350px] h-80 bg-[rgba(0,0,0,0.9)] shadow-md px-12 justify-between items-center rounded-3xl py-8">
                                     <h4 className="text-xl italic">- {review.name} -</h4>
                                     <h6 className="text-lg text-center">"{review.quote}"</h6>
                                     <p className="italic text-lg text-center">{review.date}</p>
